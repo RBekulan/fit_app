@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from fitnes.views import *
 from pro_fersion.views import *
+from users.views import authorizations, register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,8 @@ urlpatterns = [
     path('api/v1/neck/', training_neck),
     path('api/v1leg/', training_leg),
     path('api/v1/back/', training_back),
-    path('api/v1/plusversion/', pro_version)
+    path('api/v1/plusversion/', pro_version),
+    path('api/v1/register/', register),
+    path('api/v1/authorizations/', authorizations),
 
 ]
