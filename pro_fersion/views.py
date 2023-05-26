@@ -31,6 +31,8 @@ def training_leg(request):
         training = LegExercises.objects.all()
         serializer = LegExercisesSerializers(training, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
+    else:
+        (render('localhost/api/v1/plusversion/'))
 
 
 @api_view(['GET'])
