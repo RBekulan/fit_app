@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import *
 from .serializers import *
-
+import datetime
 
 @api_view(['GET'])
 def training_eye(request):
@@ -25,15 +25,19 @@ def training_neck(request):
     return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
-def training_leg(request):
-    training = LegExercises.objects.all()
-    serializer = LegExercisesSerializers(training, many=True)
-    return Response(data=serializer.data, status=status.HTTP_200_OK)
-
 
 @api_view(['GET'])
-def training_back(request):
-    training = BackExercises.objects.all()
-    serializer = BackExercisesSerializers(training, many=True)
-    return Response(data=serializer.data, status=status.HTTP_200_OK)
+def start_and_stop(start, stop):
+
+    start = datetime.datetime.now()
+
+    stop = datetime.datetime.now()
+
+    result = start - stop
+
+    day = []
+
+    day.append(result)
+
+    return f'результат {result}'
+

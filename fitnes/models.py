@@ -18,12 +18,5 @@ class NeckExercises(Exercises):  # упражнения для шеи
     pass
 
 
-class LegExercises(models.Model):  # упражнения для ног
-    warm_up = models.CharField(max_length=230)  # размика
-    jumping = models.CharField(max_length=230)  # прыжки
-    sit_ups = models.CharField(max_length=230)  # приседания
 
 
-class BackExercises(models.Model):
-    hand_rotations = models.CharField(max_length=230)  # вращения руками
-    pull_ups = models.CharField(max_length=230)  # подтягивание в турник

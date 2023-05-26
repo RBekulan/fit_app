@@ -17,13 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from fitnes.views import *
+from pro_fersion.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('eye/', training_eye),
-    path('hand/', training_hand),
-    path('neck/', training_neck),
-    path('leg/', training_leg),
-    path('back/', training_back)
+    path('api/v1/eye/', training_eye),
+    path('api/v1/hand/', training_hand),
+    path('api/v1/neck/', training_neck),
+    path('api/v1leg/', training_leg),
+    path('api/v1/back/', training_back),
+    path('api/v1/plusversion/', pro_version)
 
 ]

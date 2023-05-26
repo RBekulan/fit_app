@@ -19,14 +19,3 @@ class NeckExercisesSerializers(serializers.ModelSerializer):
         model = NeckExercises
         fields = '__all__'
 
-
-class LegExercisesSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = LegExercises
-        fields = '__all__'
-
-
-class BackExercisesSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = BackExercises
-        fields = '__all__'
