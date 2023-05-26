@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate
 from users.serializers import UserLoginValidateSerializer, UserCreateValidateSerializer
 
 
+
 @api_view(['POST'])
 def authorizations(request):
     serializer = UserLoginValidateSerializer(data=request.data)

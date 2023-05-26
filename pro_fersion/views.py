@@ -3,6 +3,9 @@ from rest_framework import status
 from rest_framework.response import Response
 from .models import *
 from .serializers import *
+from django.contrib.auth.models import User
+
+from django.shortcuts import render
 
 
 @api_view(['POST'])
@@ -24,14 +27,17 @@ def pro_version(request):
 
 @api_view(['GET'])
 def training_leg(request):
-    training = LegExercises.objects.all()
-    serializer = LegExercisesSerializers(training, many=True)
-    return Response(data=serializer.data, status=status.HTTP_200_OK)
+    if User(is_active=True):
+        training = LegExercises.objects.all()
+        serializer = LegExercisesSerializers(training, many=True)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
 def training_back(request):
-    training = BackExercises.objects.all()
-    serializer = BackExercisesSerializers(training, many=True)
-    return Response(data=serializer.data, status=status.HTTP_200_OK)
-
+    if User(is_active=True):
+        training = BackExercises.objects.all()
+        serializer = BackExercisesSerializers(training, many=True)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+    else:
+        (render('localhost/api/v1/plusversion/'))
