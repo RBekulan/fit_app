@@ -21,9 +21,9 @@ def pro_version(request):
     pro = ProUser.objects.create(name_card=name_card, cvc_card=cvc_card, valid_thru=valid_thru,
                                  number_card=number_card,
                                  money=money)
-    pro = User.is_active = True
+    pro.is_active = True
 
-    return Response(data=ProUserSerializers(pro).data, status=status.HTTP_201_CREATED, )
+    return Response(data=ProUserSerializers(pro).data, status=status.HTTP_201_CREATED)
 
 
 @api_view(['GET'])
