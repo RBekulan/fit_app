@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='prouser',
             name='money',
-            field=models.CharField(default=200, max_length=230),
+            field=models.CharField(default=500, max_length=230),
         ),
     ]

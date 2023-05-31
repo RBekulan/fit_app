@@ -5,11 +5,13 @@ from .models import *
 from .serializers import *
 import datetime
 
+
 @api_view(['GET'])
 def training_eye(request):
     training = EyeExercises.objects.all()
     serializer = EyeExercisesSerializers(training, many=True)
     return Response(data=serializer.data, status=status.HTTP_200_OK)
+
 
 @api_view(['GET'])
 def training_hand(request):
@@ -25,10 +27,8 @@ def training_neck(request):
     return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
-
 @api_view(['GET'])
 def start_and_stop(start, stop):
-
     start = datetime.datetime.now()
 
     stop = datetime.datetime.now()
@@ -40,4 +40,5 @@ def start_and_stop(start, stop):
     day.append(result)
 
     return f'результат {result}'
+
 
