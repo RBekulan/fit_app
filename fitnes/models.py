@@ -17,6 +17,3 @@ class EyeExercises(Exercises):  # упражнения для глаз
 class NeckExercises(Exercises):  # упражнения для шеи
     pass
 
-
-
-

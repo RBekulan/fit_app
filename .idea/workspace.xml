@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="450f8aac-24d4-484a-a697-3d846bc2b42d" name="Changes" comment="fit_app" />
+    <list default="true" id="450f8aac-24d4-484a-a697-3d846bc2b42d" name="Changes" comment="fit_app">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitnes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitnes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitnes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitnes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro_fersion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pro_fersion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +46,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -154,6 +161,9 @@
       <workItem from="1685083744082" duration="28000" />
       <workItem from="1685083792751" duration="759000" />
       <workItem from="1685084613260" duration="2435000" />
+      <workItem from="1685462524795" duration="3162000" />
+      <workItem from="1685528170912" duration="2875000" />
+      <workItem from="1685780277035" duration="340000" />
     </task>
     <task id="LOCAL-00001" summary="fit_app">
       <created>1684934019588</created>
@@ -197,11 +207,36 @@
       <option name="project" value="LOCAL" />
       <updated>1685088135408</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fit_app">
+      <created>1685119152618</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685119152618</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fit_app">
+      <created>1685527098542</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685527098542</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fit_app" />

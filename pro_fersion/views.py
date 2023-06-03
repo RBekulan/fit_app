@@ -1,45 +1,50 @@
-from rest_framework.decorators import api_view
-from rest_framework import status
+from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import status
 from .models import *
 from .serializers import *
-from django.contrib.auth.models import User
-
 from django.shortcuts import render
 
 
-@api_view(['POST'])
-def pro_version(request):
-    serializer = ValidateSerializers(data=request.data)
-    if not serializer.is_valid():
-        return Response(data={'errors': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-    name_card = request.data.get('name_card')
-    cvc_card = request.data.get('cvc_card')
-    valid_thru = request.data.get('valid_thru')
-    number_card = request.data.get('number_card')
-    money = request.data.get('money')
-    pro = ProUser.objects.create(name_card=name_card, cvc_card=cvc_card, valid_thru=valid_thru,
-                                 number_card=number_card, money=money, is_active=True)
-    # pro.is_active = True
+class ProVersionView(APIView):
+    def post(self, request):
+        serializer = ValidateSerializers(data=request.data)
+        if not serializer.is_valid():
+            return Response(data={'errors': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
-    return Response(data=ProUserSerializers(pro).data, status=status.HTTP_201_CREATED)
+        name_card = request.data.get('name_card')
+        cvc_card = request.data.get('cvc_card')
+        valid_thru = request.data.get('valid_thru')
+        number_card = request.data.get('number_card')
+        money = request.data.get('money')
 
+        pro = ProUser.objects.create(
+            name_card=name_card,
+            cvc_card=cvc_card,
+            valid_thru=valid_thru,
+            number_card=number_card,
+            money=money,
+            is_active=True
+        )
 
-@api_view(['GET'])
-def training_leg(request):
-    if request.user.is_active:
-        training = LegExercises.objects.all()
-        serializer = LegExercisesSerializers(training, many=True)
-        return Response(data=serializer.data, status=status.HTTP_200_OK)
-    else:
-        (render('localhost/api/v1/plusversion/'))
+        return Response(data=ProUserSerializers(pro).data, status=status.HTTP_201_CREATED)
 
 
-@api_view(['GET'])
-def training_back(request):
-    if request.user.is_active:
-        training = BackExercises.objects.all()
-        serializer = BackExercisesSerializers(training, many=True)
-        return Response(data=serializer.data, status=status.HTTP_200_OK)
-    else:
-        return render('localhost/api/v1/plusversion/')
+class LegTrainingView(APIView):
+    def get(self, request):
+        if request.user.is_active:
+            training = LegExercises.objects.all()
+            serializer = LegExercisesSerializers(training, many=True)
+            return Response(data=serializer.data, status=status.HTTP_200_OK)
+        else:
+            return render(request, 'localhost/api/v1/plusversion')
+
+
+class BackTrainingView(APIView):
+    def get(self, request):
+        if request.user.is_active:
+            training = BackExercises.objects.all()
+            serializer = BackExercisesSerializers(training, many=True)
+            return Response(data=serializer.data, status=status.HTTP_200_OK)
+        else:
+            return render(request, 'localhost/api/v1/plusversion.html')
