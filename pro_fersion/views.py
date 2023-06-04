@@ -28,9 +28,9 @@ class ProVersionView(APIView):
 
         if pro:
             request.user.is_active = True
-            return Response('ok')
+            return Response(f'ok')
 
-        return Response(data=ProUserSerializers(pro).data, status=status.HTTP_201_CREATED)
+        return Response(data=ProUserSerializers(pro).data, status=status.HTTP_201_CREATED, )
 
 
 class LegTrainingView(APIView):

@@ -58,7 +58,7 @@ class StartStopView(APIView):
         - данные: строковое представление разницы во времени.
         - статус: код состояния HTTP 200 (ОК).
         """
-        start = datetime.datetime.now()
+        start = datetime.   datetime.now()
         stop = datetime.datetime.now()
         result = start - stop
         day = []
