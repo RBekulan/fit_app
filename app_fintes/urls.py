@@ -25,7 +25,7 @@ urlpatterns = [
     path('api/v1/eye/', EyeTrainingView.as_view()),
     path('api/v1/hand/', HandTrainingView.as_view()),
     path('api/v1/neck/', NeckTrainingView.as_view()),
-    path('api/v1leg/', LegTrainingView.as_view()),
+    path('api/v1/leg/', LegTrainingView.as_view()),
     path('api/v1/back/', BackTrainingView.as_view()),
     path('api/v1/plusversion/', ProVersionView.as_view()),
     path('api/v1/register/', RegisterView.as_view()),
