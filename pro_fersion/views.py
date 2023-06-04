@@ -37,7 +37,7 @@ class LegTrainingView(APIView):
             serializer = LegExercisesSerializers(training, many=True)
             return Response(data=serializer.data, status=status.HTTP_200_OK)
         else:
-            return render(request, 'localhost/api/v1/plusversion')
+            return render('localhost/api/v1/plusversion')
 
 
 class BackTrainingView(APIView):
@@ -47,4 +47,4 @@ class BackTrainingView(APIView):
             serializer = BackExercisesSerializers(training, many=True)
             return Response(data=serializer.data, status=status.HTTP_200_OK)
         else:
-            return render(request, 'localhost/api/v1/plusversion.html')
+            return render('localhost/api/v1/plusversion.html')
