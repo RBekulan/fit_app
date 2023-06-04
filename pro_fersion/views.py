@@ -24,8 +24,11 @@ class ProVersionView(APIView):
             valid_thru=valid_thru,
             number_card=number_card,
             money=money,
-            is_active=True
         )
+
+        if pro:
+            request.user.is_active = True
+            return Response('ok')
 
         return Response(data=ProUserSerializers(pro).data, status=status.HTTP_201_CREATED)
 
