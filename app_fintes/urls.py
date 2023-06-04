@@ -18,17 +18,18 @@ from django.contrib import admin
 from django.urls import path
 from fitnes.views import *
 from pro_fersion.views import *
-from users.views import authorizations, register
+from users.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/eye/', training_eye),
-    path('api/v1/hand/', training_hand),
-    path('api/v1/neck/', training_neck),
-    path('api/v1leg/', training_leg),
-    path('api/v1/back/', training_back),
-    path('api/v1/plusversion/', pro_version),
-    path('api/v1/register/', register),
-    path('api/v1/authorizations/', authorizations),
+    path('api/v1/eye/', EyeTrainingView.as_view()),
+    path('api/v1/hand/', HandTrainingView.as_view()),
+    path('api/v1/neck/', NeckTrainingView.as_view()),
+    path('api/v1leg/', LegTrainingView.as_view()),
+    path('api/v1/back/', BackTrainingView.as_view()),
+    path('api/v1/plusversion/', ProVersionView.as_view()),
+    path('api/v1/register/', RegisterView.as_view()),
+    path('api/v1/authorizations/', AuthorizationView.as_view()),
+    path('api/v1/start/', StartStopView.as_view())
 
 ]
