@@ -1,8 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import *
-from .serializers import *
+from category.serializers import *
 import datetime
 
 
@@ -58,7 +57,7 @@ class StartStopView(APIView):
         - данные: строковое представление разницы во времени.
         - статус: код состояния HTTP 200 (ОК).
         """
-        start = datetime.   datetime.now()
+        start = datetime.datetime.now()
         stop = datetime.datetime.now()
         result = start - stop
         day = []
