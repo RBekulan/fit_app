@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from fitnes.views import *
+# from fitnes.views import *
+from category.views import *
 from pro_fersion.views import *
 from users.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
